@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="dark_gray">#757575</color>
+    <color name="red">#D32F2F</color>
+
+    <!-- Màu chính của ứng dụng -->
+        <color name="colorPrimary">#2196F3</color>        <!-- Xanh dương -->
+        <color name="colorPrimaryDark">#1976D2</color>    <!-- Xanh dương đậm -->
+        <color name="colorAccent">#FF4081</color>         <!-- Hồng -->
+
+        <!-- Màu bổ sung -->
+        <color name="colorBackground">#F5F5F5</color>     <!-- Trắng -->
+        <color name="colorText">#212121</color>           <!-- Đen nhạt -->
+        <color name="colorTextSecondary">#757575</color>  <!-- Xám đậm -->
+        <color name="colorDivider">#BDBDBD</color>        <!-- Xám nhạt -->
+
+        <!-- Màu cho các thành phần cụ thể -->
+        <color name="itemBackground">#F5F5F5</color>      <!-- Xám rất nhạt -->
+        <color name="rippleColor">#E0E0E0</color>         <!-- Màu gợn sóng khi chạm -->
+
+        <!-- Màu cho thông báo -->
+        <color name="successColor">#4CAF50</color>        <!-- Xanh lá -->
+        <color name="errorColor">#F44336</color>          <!-- Đỏ -->
+        <color name="warningColor">#FFC107</color>        <!-- Vàng -->
+
+        <!-- Màu cho các nút -->
+        <color name="buttonPrimary">#2196F3</color>       <!-- Xanh dương -->
+        <color name="buttonSecondary">#9E9E9E</color>     <!-- Xám -->
+</resources>

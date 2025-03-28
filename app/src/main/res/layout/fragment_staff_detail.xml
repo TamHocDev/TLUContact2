@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.StaffDetailFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Header với màu nền gradient -->
+            <View
+                android:id="@+id/headerBackground"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/staff_header_gradient"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Card chứa thông tin chi tiết -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="120dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="24dp">
+
+                    <!-- Avatar cán bộ -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAvatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="50dp">
+
+                        <ImageView
+                            android:id="@+id/ivEmployeeDetailAvatar"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@android:drawable/ic_menu_myplaces"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="Avatar" />
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Tên cán bộ -->
+                    <TextView
+                        android:id="@+id/tvStaffDetailName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Họ và tên"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:textAlignment="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/cardAvatar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <!-- Chức vụ và đơn vị -->
+                    <TextView
+                        android:id="@+id/tvStaffPositionTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chức vụ"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="italic"
+                        app:layout_constraintTop_toBottomOf="@id/tvStaffDetailName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvStaffUnitTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đơn vị công tác"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorTextSecondary"
+                        app:layout_constraintTop_toBottomOf="@id/tvStaffPositionTop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <!-- Các nút liên hệ nhanh -->
+                    <LinearLayout
+                        android:id="@+id/llQuickActions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:gravity="center"
+                        app:layout_constraintTop_toBottomOf="@id/tvStaffUnitTop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <!-- Nút gọi điện -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCall"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#E0E0E0">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@android:drawable/ic_menu_call"
+                                android:padding="16dp"
+                                app:tint="@color/colorPrimary"
+                                android:contentDescription="Call" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Nút gửi email -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardEmail"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#E0E0E0">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@android:drawable/ic_dialog_email"
+                                android:padding="16dp"
+                                app:tint="@color/colorPrimary"
+                                android:contentDescription="Email" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!-- Đường phân cách -->
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/llQuickActions"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <!-- Thông tin chi tiết -->
+                    <TextView
+                        android:id="@+id/tvContactInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thông tin liên hệ"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/divider"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <!-- Khung thông tin chi tiết -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardContactInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:contentPadding="16dp"
+                        app:cardBackgroundColor="#F5F5F5"
+                        app:layout_constraintTop_toBottomOf="@id/tvContactInfo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Chức vụ -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Chức vụ:"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorText" />
+
+                                <TextView
+                                    android:id="@+id/tvStaffDetailPosition"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Chức vụ"
+                                    android:textColor="@color/colorText" />
+                            </LinearLayout>
+
+                            <!-- Đơn vị -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Đơn vị:"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorText" />
+
+                                <TextView
+                                    android:id="@+id/tvStaffDetailUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Đơn vị công tác"
+                                    android:textColor="@color/colorText" />
+                            </LinearLayout>
+
+                            <!-- Điện thoại -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="12dp">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Điện thoại:"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorText" />
+
+                                <TextView
+                                    android:id="@+id/tvStaffDetailPhone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Số điện thoại"
+                                    android:textColor="@color/colorText" />
+                            </LinearLayout>
+
+                            <!-- Email -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Email:"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorText" />
+
+                                <TextView
+                                    android:id="@+id/tvStaffDetailEmail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Email"
+                                    android:textColor="@color/colorText" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

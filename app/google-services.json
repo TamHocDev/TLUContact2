@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "413233820507",
+    "project_id": "tlucontact-cc382",
+    "storage_bucket": "tlucontact-cc382.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413233820507:android:e54fca45debcca6187a07e",
+        "android_client_info": {
+          "package_name": "vn.edu.tlu.tlucontact"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtI39snbIiEX4UvetipJJg3ZB-V-mnhjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
